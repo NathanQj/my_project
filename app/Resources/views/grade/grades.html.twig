@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+        <li>Take a look at the <a href="{{ path('lesson') }}">lessons</a>.</li>
+        <li>Attribute <a href="{{ path('grade_create') }}">grades</a>.</li>
+    </ul>
+    <section class="container">
+        {% for grade in grades %}
+            <article>
+                <h2>{{ grade.lesson.title }}</h2>
+                <p>{{ grade.user.username }} got {{ grade.grade }}</p>
+                <p><a href="{{ path('grade_edit', {'id': grade.id}) }}">Edit</a></p>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

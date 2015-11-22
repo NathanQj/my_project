@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+        <li>Want to improve a lesson ? Edit it by clicking on its title or <a href="{{ path('lesson_create') }}">create a new one</a>!</li>
+        <li>Look at the corresponding <a href="{{ path('grade') }}">notes</a>.</li>
+    </ul>
+    <section class="container">
+        {% for lesson in lessons %}
+            <article>
+                <a href="{{ path('lesson_edit', {'id': lesson.id}) }}"><h1>{{ lesson.title }}</h1></a>
+                <p>{{ lesson.summary }}</p>
+                <p>{{ lesson.writer.username }}</p>
+                <p></p>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

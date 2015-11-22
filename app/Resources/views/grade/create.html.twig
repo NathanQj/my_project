@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {{ form_start(form) }}
+            {{ form_row(form.grade) }}
+            {{ form_row(form.comment) }}
+            {{ form_row(form.lesson) }}
+            {{ form_row(form.user) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

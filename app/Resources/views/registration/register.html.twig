@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration page{% endblock %}
+
+{%  block body %}
+    <div class="container">
+        <div class="row">
+            {{ form_start(form) }}
+            <div class="col-md-4">
+                {{ form_row(form.username) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.plainPassword.first) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.email) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.plainPassword.second) }}
+            </div>
+        </div>
+        <button type="submit">Register!</button>
+        {{ form_end(form) }}
+        <p>Already registered ? <a href="{{ path('login_route') }}">Click here</a></p>
+    </div>
+
+{% endblock %}
